@@ -1,6 +1,6 @@
 from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, \
-     Number, Operator, Generic
+     Number, Operator, Punctuation, Generic
 
 import colorsys
 import webcolors
@@ -33,17 +33,20 @@ class NordLight(Style):
     highlight_color = hexalpha(lighten(colors.aurora.yellow), 0.5)
     styles = {
         Generic :                colors.polar_night.darkest,
+        Punctuation :            colors.polar_night.darkest,
+        Operator :               colors.polar_night.darkest,
         Comment :                'italic ' + colors.polar_night.med,
         Comment.Preproc :        'noitalic ' + colors.polar_night.darkest,
         Comment.PreprocFile :    'noitalic ' + colors.polar_night.darkest,
         Keyword :                colors.frost.dark,
         Operator.Word :          colors.frost.dark,
-        Name.Builtin :           colors.frost.dark,
         Number :                 darken(colors.aurora.purple),
+        Name :                   colors.polar_night.darkest,
+        Name.Builtin :           'bold  ' + colors.frost.dark,
         Name.Constant :          colors.aurora.red,
-        Name.Function :          colors.frost.med,
-        Name.Class :             colors.frost.med,
-        Name.Namespace :         colors.frost.med,
+        Name.Function :          colors.frost.greenish,
+        Name.Class :             colors.frost.greenish,
+        Name.Namespace :         colors.aurora.yellow,
         String :                 darken(colors.aurora.green),
         String.Escape :          darken(colors.aurora.orange),
     }

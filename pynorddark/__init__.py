@@ -1,6 +1,6 @@
 from pygments.style import Style
 from pygments.token import Keyword, Name, Comment, String, Error, \
-     Number, Operator, Generic
+     Number, Operator, Punctuation, Generic
 
 import colorsys
 import webcolors
@@ -33,17 +33,20 @@ class NordDark(Style):
     highlight_color = lighten(colors.polar_night.dark)
     styles = {
         Generic :                colors.snow_storm.lightest,
+        Punctuation :            colors.snow_storm.lightest,
+        Operator :               colors.snow_storm.lightest,
         Comment :                'italic ' + colors.snow_storm.light,
         Comment.Preproc :        'noitalic ' + colors.snow_storm.lightest,
         Comment.PreprocFile :    'noitalic ' + colors.snow_storm.lightest,
-        Keyword :                colors.frost.light,
+        Keyword :                'bold ' + colors.frost.light,
         Operator.Word :          colors.frost.light,
-        Name.Builtin :           colors.frost.light,
         Number :                 darken(colors.aurora.purple),
+        Name :                   colors.snow_storm.lightest,
+        Name.Builtin :           'bold ' + colors.frost.light,
         Name.Constant :          colors.aurora.red,
         Name.Function :          colors.frost.greenish,
         Name.Class :             colors.frost.greenish,
-        Name.Namespace :         colors.frost.greenish,
+        Name.Namespace :         colors.aurora.yellow,
         String :                 darken(colors.aurora.green),
         String.Escape :          darken(colors.aurora.orange),
     }
